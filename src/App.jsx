@@ -46,7 +46,7 @@ function App() {
       setTask(data);
     }
 
-    fetchTasks();
+    //fetchTasks();
   }, []);
 
   return (
