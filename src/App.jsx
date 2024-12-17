@@ -34,7 +34,11 @@ function App() {
     setTask([...tasks, newTask]);
   }
 
-  // Aqui estamos salvando as tarefas no LocalStorage usando o hook do react: useEffects.
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  // Aqui podemos consumir uma api
   useEffect(() => {
     async function fetchTasks() {
       const response = await fetch(
